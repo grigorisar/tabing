@@ -1,0 +1,31 @@
+<div class="tabs-demo">
+  <div class="widget-container">
+    <div [ngClass]="widgetWrapperClasses">
+      <dx-tabs
+        #withText
+        [width]="width"
+        [selectedIndex]="selectedIndex"
+        [rtlEnabled]="rtlEnabled"
+        [scrollByContent]="scrollByContent"
+        [showNavButtons]="showNavButtons"
+        [dataSource]="tabsWithText"
+        [orientation]="orientation"
+        [stylingMode]="stylingMode"
+        [iconPosition]="iconPosition"
+               (onOptionChanged)="onOptionChanged($event)"
+        itemTemplate="template"
+      >
+       <div *dxTemplate="let content of 'template'">
+         <span>{{ content.text }}</span>
+         
+            <i
+              class="dx-icon dx-icon-close"
+              (click)="closeButtonHandler(content)"
+            ></i>
+        </div>
+      
+      </dx-tabs>
+
+   
+  </div>
+</div>
